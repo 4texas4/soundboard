@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Sound Board</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .sound-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
+
+        .sound-button:hover {
+            background-color: #45a049;
+        }
+
+        .button-label {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="sound-button" onclick="playSound()">▶</button>
+        <div class="button-label">Play Sound</div>
+    </div>
+
+    <script>
+        let audio = new Audio('sound.mp3');  // Make sure your MP3 file is named 'sound.mp3'
+
+        function playSound() {
+            audio.currentTime = 0;  // Reset the audio to start
+            audio.play();
+        }
+    </script>
+</body>
+</html>
