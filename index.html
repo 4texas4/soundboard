@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Sound Board</title>
+    <title>20 Button Sound Board</title>
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .button-container {
@@ -20,39 +30,137 @@
         }
 
         .sound-button {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             border: none;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
             margin-bottom: 5px;
-            font-size: 24px;
+            font-size: 20px;
+            transition: background-color 0.2s, transform 0.1s;
         }
 
         .sound-button:hover {
             background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .sound-button:active {
+            transform: scale(0.95);
         }
 
         .button-label {
-            font-size: 14px;
+            font-size: 12px;
             color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <button class="sound-button" onclick="playSound()">▶</button>
-        <div class="button-label">Play Sound</div>
+    <!-- Top Row -->
+    <div class="row">
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound1.mp3')">▶</button>
+            <div class="button-label">Sound 1</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound2.mp3')">▶</button>
+            <div class="button-label">Sound 2</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound3.mp3')">▶</button>
+            <div class="button-label">Sound 3</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound4.mp3')">▶</button>
+            <div class="button-label">Sound 4</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound5.mp3')">▶</button>
+            <div class="button-label">Sound 5</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound6.mp3')">▶</button>
+            <div class="button-label">Sound 6</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound7.mp3')">▶</button>
+            <div class="button-label">Sound 7</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound8.mp3')">▶</button>
+            <div class="button-label">Sound 8</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound9.mp3')">▶</button>
+            <div class="button-label">Sound 9</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound10.mp3')">▶</button>
+            <div class="button-label">Sound 10</div>
+        </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="row">
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound11.mp3')">▶</button>
+            <div class="button-label">Sound 11</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound12.mp3')">▶</button>
+            <div class="button-label">Sound 12</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound13.mp3')">▶</button>
+            <div class="button-label">Sound 13</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound14.mp3')">▶</button>
+            <div class="button-label">Sound 14</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound15.mp3')">▶</button>
+            <div class="button-label">Sound 15</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound16.mp3')">▶</button>
+            <div class="button-label">Sound 16</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound17.mp3')">▶</button>
+            <div class="button-label">Sound 17</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound18.mp3')">▶</button>
+            <div class="button-label">Sound 18</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound19.mp3')">▶</button>
+            <div class="button-label">Sound 19</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sound20.mp3')">▶</button>
+            <div class="button-label">Sound 20</div>
+        </div>
     </div>
 
     <script>
-        let audio = new Audio('getout.mp3');  // Make sure your MP3 file is named 'sound.mp3'
+        let currentAudio = null;
 
-        function playSound() {
-            audio.currentTime = 0;  // Reset the audio to start
-            audio.play();
+        function playSound(soundFile) {
+            // Stop any currently playing audio
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            // Create and play new audio
+            currentAudio = new Audio(soundFile);
+            currentAudio.play().catch(error => {
+                console.error('Error playing sound:', error);
+            });
         }
     </script>
 </body>
