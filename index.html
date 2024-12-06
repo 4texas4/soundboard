@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20 Button Sound Board</title>
+    <title>Meme Sound Board</title>
     <style>
         body {
             display: flex;
@@ -20,25 +20,27 @@
 
         .row {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
+            max-width: 1800px;
         }
 
         .button-container {
             text-align: center;
+            width: 85px;
         }
 
         .sound-button {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             border: none;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
             margin-bottom: 5px;
-            font-size: 20px;
+            font-size: 18px;
             transition: background-color 0.2s, transform 0.1s;
         }
 
@@ -52,8 +54,9 @@
         }
 
         .button-label {
-            font-size: 12px;
+            font-size: 11px;
             color: #333;
+            word-wrap: break-word;
         }
     </style>
 </head>
@@ -61,88 +64,144 @@
     <!-- Top Row -->
     <div class="row">
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound1.mp3')">▶</button>
-            <div class="button-label">Sound 1</div>
+            <button class="sound-button" onclick="playSound('sounds/ahhhhhhhh.mp3')">▶</button>
+            <div class="button-label">Ahhhhhhhh</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound2.mp3')">▶</button>
-            <div class="button-label">Sound 2</div>
+            <button class="sound-button" onclick="playSound('sounds/AndroidBeep.mp3')">▶</button>
+            <div class="button-label">Android Beep</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound3.mp3')">▶</button>
-            <div class="button-label">Sound 3</div>
+            <button class="sound-button" onclick="playSound('sounds/backinmyday.mp3')">▶</button>
+            <div class="button-label">Back in my Day</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound4.mp3')">▶</button>
-            <div class="button-label">Sound 4</div>
+            <button class="sound-button" onclick="playSound('sounds/bingchilling.mp3')">▶</button>
+            <div class="button-label">Bing Chilling</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound5.mp3')">▶</button>
-            <div class="button-label">Sound 5</div>
+            <button class="sound-button" onclick="playSound('sounds/bruh.mp3')">▶</button>
+            <div class="button-label">Bruh</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound6.mp3')">▶</button>
-            <div class="button-label">Sound 6</div>
+            <button class="sound-button" onclick="playSound('sounds/cornhub.mp3')">▶</button>
+            <div class="button-label">Cornhub</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound7.mp3')">▶</button>
-            <div class="button-label">Sound 7</div>
+            <button class="sound-button" onclick="playSound('sounds/dababy.mp3')">▶</button>
+            <div class="button-label">DaBaby</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound8.mp3')">▶</button>
-            <div class="button-label">Sound 8</div>
+            <button class="sound-button" onclick="playSound('sounds/eheheh.mp3')">▶</button>
+            <div class="button-label">Eheheh</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound9.mp3')">▶</button>
-            <div class="button-label">Sound 9</div>
+            <button class="sound-button" onclick="playSound('sounds/emotionaldamage.mp3')">▶</button>
+            <div class="button-label">Emotional Damage</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound10.mp3')">▶</button>
-            <div class="button-label">Sound 10</div>
+            <button class="sound-button" onclick="playSound('sounds/ermwhatthesigma.mp3')">▶</button>
+            <div class="button-label">Erm What The Sigma</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/FBIopenup.mp3')">▶</button>
+            <div class="button-label">FBI Open Up</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/fortnitedefaultdance.mp3')">▶</button>
+            <div class="button-label">Default Dance</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/getout.mp3')">▶</button>
+            <div class="button-label">Get Out</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/gigachad.mp3')">▶</button>
+            <div class="button-label">Giga Chad</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/goofyahhlaugh.mp3')">▶</button>
+            <div class="button-label">Goofy Laugh</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/goofyahhsounds.mp3')">▶</button>
+            <div class="button-label">Goofy Sounds</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/gulpgulpgulp.mp3')">▶</button>
+            <div class="button-label">Gulp Gulp</div>
         </div>
     </div>
 
     <!-- Bottom Row -->
     <div class="row">
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound11.mp3')">▶</button>
-            <div class="button-label">Sound 11</div>
+            <button class="sound-button" onclick="playSound('sounds/indian.mp3')">▶</button>
+            <div class="button-label">Indian</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound12.mp3')">▶</button>
-            <div class="button-label">Sound 12</div>
+            <button class="sound-button" onclick="playSound('sounds/lightskinstare.mp3')">▶</button>
+            <div class="button-label">Light Skin Stare</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound13.mp3')">▶</button>
-            <div class="button-label">Sound 13</div>
+            <button class="sound-button" onclick="playSound('sounds/lore.mp3')">▶</button>
+            <div class="button-label">Lore</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound14.mp3')">▶</button>
-            <div class="button-label">Sound 14</div>
+            <button class="sound-button" onclick="playSound('sounds/metalpipe.mp3')">▶</button>
+            <div class="button-label">Metal Pipe</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound15.mp3')">▶</button>
-            <div class="button-label">Sound 15</div>
+            <button class="sound-button" onclick="playSound('sounds/openthedoor.mp3')">▶</button>
+            <div class="button-label">Open The Door</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound16.mp3')">▶</button>
-            <div class="button-label">Sound 16</div>
+            <button class="sound-button" onclick="playSound('sounds/quandaledingle.mp3')">▶</button>
+            <div class="button-label">Quandale Dingle</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound17.mp3')">▶</button>
-            <div class="button-label">Sound 17</div>
+            <button class="sound-button" onclick="playSound('sounds/sikomode.mp3')">▶</button>
+            <div class="button-label">Sicko Mode</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound18.mp3')">▶</button>
-            <div class="button-label">Sound 18</div>
+            <button class="sound-button" onclick="playSound('sounds/stopthecap.mp3')">▶</button>
+            <div class="button-label">Stop The Cap</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound19.mp3')">▶</button>
-            <div class="button-label">Sound 19</div>
+            <button class="sound-button" onclick="playSound('sounds/swaglikeohio.mp3')">▶</button>
+            <div class="button-label">Swag Like Ohio</div>
         </div>
         <div class="button-container">
-            <button class="sound-button" onclick="playSound('sound20.mp3')">▶</button>
-            <div class="button-label">Sound 20</div>
+            <button class="sound-button" onclick="playSound('sounds/thickofit.mp3')">▶</button>
+            <div class="button-label">Thick Of It</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/uwu.mp3')">▶</button>
+            <div class="button-label">UwU</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/Vine Boom.mp3')">▶</button>
+            <div class="button-label">Vine Boom</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/We do not care.mp3')">▶</button>
+            <div class="button-label">We Do Not Care</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/wetfart.mp3')">▶</button>
+            <div class="button-label">Wet Fart</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/whatdadogdoin.mp3')">▶</button>
+            <div class="button-label">What Da Dog Doin</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/whyareyourunning.mp3')">▶</button>
+            <div class="button-label">Why Are You Running</div>
+        </div>
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/whyyoubullyme.mp3')">▶</button>
+            <div class="button-label">Why You Bully Me</div>
         </div>
     </div>
 
