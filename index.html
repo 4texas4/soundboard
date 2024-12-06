@@ -14,39 +14,41 @@
             margin: 0;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
-            gap: 40px;
+            gap: 25px;
             padding: 20px;
         }
 
         .row {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
-            max-width: 1800px;
+            max-width: 1200px;
         }
 
         .button-container {
             text-align: center;
-            width: 85px;
+            width: 100px;
+            margin-bottom: 10px;
         }
 
         .sound-button {
-            width: 65px;
-            height: 65px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             border: none;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
             margin-bottom: 5px;
-            font-size: 18px;
-            transition: background-color 0.2s, transform 0.1s;
+            font-size: 20px;
+            transition: all 0.2s ease;
         }
 
         .sound-button:hover {
             background-color: #45a049;
             transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .sound-button:active {
@@ -54,14 +56,15 @@
         }
 
         .button-label {
-            font-size: 11px;
+            font-size: 12px;
             color: #333;
             word-wrap: break-word;
+            padding: 0 5px;
         }
     </style>
 </head>
 <body>
-    <!-- Top Row -->
+    <!-- Row 1 -->
     <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/ahhhhhhhh.mp3')">▶</button>
@@ -99,6 +102,10 @@
             <button class="sound-button" onclick="playSound('sounds/emotionaldamage.mp3')">▶</button>
             <div class="button-label">Emotional Damage</div>
         </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/ermwhatthesigma.mp3')">▶</button>
             <div class="button-label">Erm What The Sigma</div>
@@ -133,7 +140,7 @@
         </div>
     </div>
 
-    <!-- Bottom Row -->
+    <!-- Row 3 -->
     <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/indian.mp3')">▶</button>
@@ -167,6 +174,10 @@
             <button class="sound-button" onclick="playSound('sounds/stopthecap.mp3')">▶</button>
             <div class="button-label">Stop The Cap</div>
         </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/swaglikeohio.mp3')">▶</button>
             <div class="button-label">Swag Like Ohio</div>
