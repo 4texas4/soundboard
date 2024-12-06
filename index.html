@@ -107,7 +107,7 @@
     <!-- Volume Control -->
     <div class="volume-control">
         <span class="volume-label">Volume: 100%</span>
-        <input type="range" min="0" max="200" value="100" class="volume-slider" id="volumeSlider">
+        <input type="range" min="0" max="500" value="100" class="volume-slider" id="volumeSlider">
     </div>
 
     <!-- Row 1 -->
@@ -144,14 +144,14 @@
             <button class="sound-button" onclick="playSound('sounds/eheheh.mp3')">▶</button>
             <div class="button-label">Eheheh</div>
         </div>
-        <div class="button-container">
-            <button class="sound-button" onclick="playSound('sounds/emotionaldamage.mp3')">▶</button>
-            <div class="button-label">Emotional Damage</div>
-        </div>
     </div>
 
     <!-- Row 2 -->
     <div class="row">
+        <div class="button-container">
+            <button class="sound-button" onclick="playSound('sounds/emotionaldamage.mp3')">▶</button>
+            <div class="button-label">Emotional Damage</div>
+        </div>
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/ermwhatthesigma.mp3')">▶</button>
             <div class="button-label">Erm What The Sigma</div>
@@ -180,6 +180,10 @@
             <button class="sound-button" onclick="playSound('sounds/goofyahhsounds.mp3')">▶</button>
             <div class="button-label">Goofy Sounds</div>
         </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/gulpgulpgulp.mp3')">▶</button>
             <div class="button-label">Gulp Gulp</div>
@@ -188,10 +192,6 @@
             <button class="sound-button" onclick="playSound('sounds/indian.mp3')">▶</button>
             <div class="button-label">Indian</div>
         </div>
-    </div>
-
-    <!-- Row 3 -->
-    <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/lightskinstare.mp3')">▶</button>
             <div class="button-label">Light Skin Stare</div>
@@ -216,6 +216,10 @@
             <button class="sound-button" onclick="playSound('sounds/sikomode.mp3')">▶</button>
             <div class="button-label">Sicko Mode</div>
         </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/stopthecap.mp3')">▶</button>
             <div class="button-label">Stop The Cap</div>
@@ -224,10 +228,6 @@
             <button class="sound-button" onclick="playSound('sounds/swaglikeohio.mp3')">▶</button>
             <div class="button-label">Swag Like Ohio</div>
         </div>
-    </div>
-
-    <!-- Row 4 -->
-    <div class="row">
         <div class="button-container">
             <button class="sound-button" onclick="playSound('sounds/thickofit.mp3')">▶</button>
             <div class="button-label">Thick Of It</div>
@@ -266,29 +266,42 @@
         let currentAudio = null;
         const volumeSlider = document.getElementById('volumeSlider');
         const volumeLabel = document.querySelector('.volume-label');
+        const context = new (window.AudioContext || window.webkitAudioContext)();
+        let gainNode = null;
 
         volumeSlider.addEventListener('input', function() {
             const volume = this.value;
             volumeLabel.textContent = `Volume: ${volume}%`;
-            if (currentAudio) {
-                currentAudio.volume = volume / 100;
+            if (gainNode) {
+                gainNode.gain.value = volume / 100;
             }
         });
 
         function playSound(soundFile) {
-            // Stop any currently playing audio
             if (currentAudio) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
             }
 
-            // Create and play new audio
             currentAudio = new Audio(soundFile);
-            currentAudio.volume = volumeSlider.value / 100;
+            const source = context.createMediaElementSource(currentAudio);
+            gainNode = context.createGain();
+            
+            gainNode.gain.value = volumeSlider.value / 100;
+            
+            source.connect(gainNode);
+            gainNode.connect(context.destination);
+            
             currentAudio.play().catch(error => {
                 console.error('Error playing sound:', error);
             });
         }
+
+        document.body.addEventListener('click', function() {
+            if (context.state === 'suspended') {
+                context.resume();
+            }
+        }, { once: true });
     </script>
 </body>
 </html>
